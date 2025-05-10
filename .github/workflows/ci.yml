@@ -23,7 +23,10 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          dotnet-version: '8.x'
+          dotnet-version: |
+            8.x
+            7.x
+            6.x
           source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
 
       - name: Restore dependencies
